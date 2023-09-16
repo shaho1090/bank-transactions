@@ -2,6 +2,8 @@
 
 namespace Banking\Providers;
 
+use Banking\Events\CardToCardEvent;
+use Banking\Listeners\CardToCardListener;
 use Banking\Services\Validator\Contract\CardNumberValidatorInterface;
 use Banking\Services\Validator\Implementation\CardNumberValidator;
 use Illuminate\Support\ServiceProvider;
