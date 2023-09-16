@@ -24,12 +24,17 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Modules\\": "modules/",
+            "Banking\\": "modules/Banking/app",
+            "Banking\\Factories\\": "modules/Banking/database/factories",
+            "Banking\\Seeders\\": "modules/Banking/database/seeders"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Banking\\Tests\\": "modules/Banking/tests"
         }
     },
     "scripts": {
