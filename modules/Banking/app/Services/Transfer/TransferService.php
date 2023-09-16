@@ -1,9 +1,9 @@
 <?php
 
-namespace Banking\Services;
+namespace Banking\Services\Transfer;
 
 use Banking\Models\Transfer;
-use Banking\Services\DataProviders\CardToCardDataProvider;
+use Banking\Services\Transfer\DataProviders\CardToCardDataProvider;
 use Illuminate\Database\Eloquent\Model;
 
 class TransferService

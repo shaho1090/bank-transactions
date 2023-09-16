@@ -4,7 +4,7 @@ namespace Banking\Http\Controllers;
 
 
 use Banking\Http\Requests\CardToCardTransferStore;
-use Banking\Services\TransferService;
+use Banking\Services\Transfer\TransferService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;

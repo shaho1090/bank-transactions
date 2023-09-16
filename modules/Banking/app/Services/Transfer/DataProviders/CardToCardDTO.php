@@ -1,6 +1,6 @@
 <?php
 
-namespace Banking\Services\DataProviders;
+namespace Banking\Services\Transfer\DataProviders;
 
 use Banking\Models\BankCard;
 

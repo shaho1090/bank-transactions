@@ -3,7 +3,7 @@
 namespace Modules\Banking\tests\AdvancedFactories;
 
 use Banking\Models\BankReference;
-use Modules\Banking\Services\Validator\Contract\CardNumberValidatorInterface;
+use Banking\Services\Validator\Contract\CardNumberValidatorInterface;
 
 class BankCardNumberGenerator
 {

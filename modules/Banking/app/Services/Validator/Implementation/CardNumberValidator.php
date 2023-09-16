@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Banking\Services\Validator\Implementation;
+namespace Banking\Services\Validator\Implementation;
 
-use Modules\Banking\Services\Validator\Contract\CardNumberValidatorInterface;
+use Banking\Services\Validator\Contract\CardNumberValidatorInterface;
 
 class CardNumberValidator implements CardNumberValidatorInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Banking\Services;
+namespace Banking\Services\Transfer;
 
 use Banking\Enums\TransferTypeEnum;
 use Banking\Models\Transfer;
-use Banking\Services\DataProviders\CardToCardDTO;
+use Banking\Services\Transfer\DataProviders\CardToCardDTO;
 use Illuminate\Database\Eloquent\Model;
 
 class CardToCard

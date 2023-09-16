@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Banking\Services\Validator\Contract;
+namespace Banking\Services\Validator\Contract;
 
 interface CardNumberValidatorInterface
 {

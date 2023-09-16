@@ -2,9 +2,9 @@
 
 namespace Banking\Providers;
 
+use Banking\Services\Validator\Contract\CardNumberValidatorInterface;
+use Banking\Services\Validator\Implementation\CardNumberValidator;
 use Illuminate\Support\ServiceProvider;
-use Modules\Banking\Services\Validator\Contract\CardNumberValidatorInterface;
-use Modules\Banking\Services\Validator\Implementation\CardNumberValidator;
 
 class BankingServiceProvider extends ServiceProvider
 {
