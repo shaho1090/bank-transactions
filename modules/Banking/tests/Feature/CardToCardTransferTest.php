@@ -3,9 +3,12 @@
 namespace Banking\Tests\Feature;
 
 use App\Models\User;
+use Banking\Events\CardToCardEvent;
+use Banking\Listeners\CardToCardListener;
 use Banking\Models\Setting;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use Modules\Banking\tests\AdvancedFactories\BankCardFactory;
 use Tests\TestCase;
 
@@ -22,7 +25,7 @@ class CardToCardTransferTest extends TestCase
 
     public function test_a_user_can_transfer_amount_of_money_via_bank_card()
     {
-        $this->withoutExceptionHandling();
+        Event::fake();
 
         $sender = User::factory()->create();
         $receiver = User::factory()->create();
@@ -41,6 +44,13 @@ class CardToCardTransferTest extends TestCase
         $destinationCardFistBalance = $destinationCard->balance;
 
         $this->postJson(route('transfer.card.store'), $request)->assertStatus(200);
+
+        Event::assertDispatched(CardToCardEvent::class);
+
+        Event::assertListening(
+            CardToCardEvent::class,
+            CardToCardListener::class
+        );
 
         $this->assertEquals(
             ($originCardFistBalance - ($request['amount'] + $cardToCardFee)),
@@ -63,8 +73,6 @@ class CardToCardTransferTest extends TestCase
 
     public function test_a_user_can_not_transfer_amount_of_money_more_than_its_balance()
     {
-        $this->withoutExceptionHandling();
-
         $sender = User::factory()->create();
         $receiver = User::factory()->create();
 

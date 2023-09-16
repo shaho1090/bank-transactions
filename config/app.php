@@ -43,7 +43,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -160,7 +160,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Kavenegar\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -174,6 +174,7 @@ return [
        * Modules Service Providers...
        */
         Banking\Providers\BankingServiceProvider::class,
+        Banking\Providers\EventServiceProvider::class
     ])->toArray(),
 
     /*

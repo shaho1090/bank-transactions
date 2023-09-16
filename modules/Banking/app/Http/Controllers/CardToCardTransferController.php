@@ -3,6 +3,7 @@
 namespace Banking\Http\Controllers;
 
 
+use Banking\Events\CardToCardEvent;
 use Banking\Http\Requests\CardToCardTransferStore;
 use Banking\Services\Transfer\TransferService;
 use Illuminate\Http\JsonResponse;
@@ -24,6 +25,8 @@ class CardToCardTransferController
             DB::beginTransaction();
 
             $transfer = $this->transferService->cardToCard($data);
+
+            CardToCardEvent::dispatch($transfer);
 
             DB::commit();
         } catch (\Throwable $exception) {

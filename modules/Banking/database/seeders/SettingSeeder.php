@@ -16,10 +16,10 @@ class SettingSeeder extends Seeder
     {
         DB::table('settings')->insert([
             [
-                'key' => SettingsEnum::BANK_CARD_WITHDRAWAL_NOTIFICATION->value,
+                'key' => SettingsEnum::CARD_WITHDRAWAL_NOTIF_TEXT->value,
                 'value' => 'Your Bank Card has been withdrawn!'
             ],[
-                'key' => SettingsEnum::BANK_CARD_DEPOSIT_NOTIFICATION->value,
+                'key' => SettingsEnum::CARD_DEPOSIT_NOTIF_TEXT->value,
                 'value' => 'Your Bank Card has been deposited!'
             ],[
                 'key' => SettingsEnum::TRANSFER_CARD_FEE_AMOUNT->value,
