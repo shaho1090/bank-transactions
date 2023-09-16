@@ -17,14 +17,14 @@ services:
     container_name: bt-app
     build:
       args:
-        user: ${APP_USERNAME}
-        uid: ${APP_UID}
+        user: shaho
+        uid: 1000
       context: .
       dockerfile: ./docker/Dockerfile
       network: host
 
-    env_file:
-      - .env
+#    env_file:
+#      - .env
     volumes:
       - .:/var/www
 
@@ -35,7 +35,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init/db:/docker-entrypoint-initdb.d
-    #      - /home/mysql_data:/var/lib/mysql
+#          - /home/mysql_data:/var/lib/mysql
     ports:
       - "3309:3306"
     restart: unless-stopped
