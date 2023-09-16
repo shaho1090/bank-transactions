@@ -13,9 +13,10 @@ class Transfer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'from_card_id',
-        'to_card_id',
-        'amount'
+        'from_id',
+        'to_id',
+        'amount',
+        'type'
     ];
 
     public function originCard(): BelongsTo
