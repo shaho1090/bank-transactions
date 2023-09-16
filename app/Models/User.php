@@ -45,4 +45,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function routeNotificationForSms($driver, $notification = null)
+    {
+        return $this->mobile;
+    }
 }
