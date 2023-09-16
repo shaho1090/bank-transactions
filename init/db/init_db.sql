@@ -1,2 +1,2 @@
 CREATE DATABASE IF NOT EXISTS `laravel_test`;
-GRANT ALL ON `laravel_test`.* TO 'test-user'@'%';
+GRANT ALL ON `laravel_test`.* TO 'bt-user'@'%';
