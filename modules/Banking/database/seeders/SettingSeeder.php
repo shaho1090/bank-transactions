@@ -2,6 +2,7 @@
 
 namespace Banking\Seeders;
 
+use App\Services\SMS\Providers\Kavenegar;
 use Banking\Enums\SettingsEnum;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -29,6 +30,9 @@ class SettingSeeder extends Seeder
             ],[
                 'key' => SettingsEnum::TRANSFER_CARD_MAXIMUM_AMOUNT->value,
                 'value' => 50000000
+            ],[
+                'key' => SettingsEnum::DEFAULT_SMS_PROVIDER->value,
+                'value' => Kavenegar::class
             ],
         ]);
     }
