@@ -23,6 +23,12 @@ class SettingSeeder extends Seeder
             ],[
                 'key' => SettingsEnum::TRANSFER_CARD_FEE_AMOUNT->value,
                 'value' => 500
+            ],[
+                'key' => SettingsEnum::TRANSFER_CARD_MINIMUM_AMOUNT->value,
+                'value' => 1000
+            ],[
+                'key' => SettingsEnum::TRANSFER_CARD_MAXIMUM_AMOUNT->value,
+                'value' => 50000000
             ],
         ]);
     }

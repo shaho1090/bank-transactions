@@ -2,6 +2,7 @@
 
 namespace Banking\Http\Requests;
 
+use Banking\Models\Setting;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,10 +23,13 @@ class CardToCardTransferStore extends FormRequest
      */
     public function rules(): array
     {
+        $minimumAmount = (new Setting())->getCardToCardMinimumAmount();
+        $maximumAmount = (new Setting())->getCardToCardMaximumAmount();
+
         return [
-            'origin_card' => ['required','exists:bank_cards,card_number'],
-            'destination_card' => ['required','exists:bank_cards,card_number'],
-            'amount' => ['required','numeric','gte:1000','lte:50000000']
+            'origin_card' => ['required', 'exists:bank_cards,card_number'],
+            'destination_card' => ['required', 'exists:bank_cards,card_number'],
+            'amount' => ['required', 'numeric', 'gte:'.$minimumAmount, 'lte:'.$maximumAmount]
         ];
     }
 }

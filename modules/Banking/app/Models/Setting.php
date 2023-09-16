@@ -19,4 +19,14 @@ class Setting extends Model
     {
         return $this->query()->where('key', SettingsEnum::TRANSFER_CARD_FEE_AMOUNT->value)->first()?->value;
     }
+
+    public function getCardToCardMinimumAmount()
+    {
+        return $this->query()->where('key', SettingsEnum::TRANSFER_CARD_MINIMUM_AMOUNT->value)->first()?->value;
+    }
+
+    public function getCardToCardMaximumAmount()
+    {
+        return $this->query()->where('key', SettingsEnum::TRANSFER_CARD_MAXIMUM_AMOUNT->value)->first()?->value;
+    }
 }
