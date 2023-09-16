@@ -35,7 +35,6 @@ class BankCardNumberGenerator
         return $this;
     }
 
-    //BankReference $bankReference
     public function generate(): string
     {
         if (is_null($this->cardPrefix)) {
