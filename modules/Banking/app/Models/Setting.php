@@ -29,4 +29,19 @@ class Setting extends Model
     {
         return $this->query()->where('key', SettingsEnum::TRANSFER_CARD_MAXIMUM_AMOUNT->value)->first()?->value;
     }
+
+    public function getDefaultSMSProvider()
+    {
+        return $this->query()->where('key', SettingsEnum::DEFAULT_SMS_PROVIDER->value)->first()?->value;
+    }
+
+    public function getCardWithdrawalNotifText()
+    {
+        return $this->query()->where('key', SettingsEnum::CARD_WITHDRAWAL_NOTIF_TEXT->value)->first()?->value;
+    }
+
+    public function getCardDepositNotifText()
+    {
+        return $this->query()->where('key', SettingsEnum::CARD_DEPOSIT_NOTIF_TEXT->value)->first()?->value;
+    }
 }
